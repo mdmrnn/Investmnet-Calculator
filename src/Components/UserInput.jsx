@@ -2,44 +2,48 @@ export default function UserInput({ handleInput, userInput }) {
   return (
     <div id="user-input">
       <div className="input-group">
-        <div>
+        <p>
           <label htmlFor="initial-investment">INITAIL INVESTMENT</label>
           <input
             type="number"
+            required
             id="initial-investment"
             value={userInput.initialInvestment}
             onChange={(event) => handleInput("initialInvestment", event)}
           />
-        </div>
-        <div>
+        </p>
+        <p>
           <label htmlFor="annual-investment">ANNUAL INVESTMENT</label>
           <input
             type="number"
+            required
             id="annual-investment"
             value={userInput.annualInvestment}
             onChange={(event) => handleInput("annualInvestment", event)}
           />
-        </div>
+        </p>
       </div>
       <div className="input-group">
-        <div>
+        <p>
           <label htmlFor="expected-return">EXPECTED RETURN</label>
           <input
             type="number"
+            required
             id="expected-return"
             value={userInput.expectedReturn}
             onChange={(event) => handleInput("expectedReturn", event)}
           />
-        </div>
-        <div>
+        </p>
+        <p>
           <label htmlFor="duration">DURATION</label>
           <input
             type="number"
+            required
             id="duration"
             value={userInput.duration}
             onChange={(event) => handleInput("duration", event)}
           />
-        </div>
+        </p>
       </div>
     </div>
   );

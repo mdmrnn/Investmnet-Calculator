@@ -6,8 +6,8 @@ import { calculateInvestmentResults } from "./util/investment";
 function App() {
   const [userInput, setUserInput] = useState({
     initialInvestment: 10000,
-    annualInvestment: 300,
-    expectedReturn: 3,
+    annualInvestment: 1200,
+    expectedReturn: 6,
     duration: 10,
   });
   let annualData = calculateInvestmentResults(userInput);
@@ -24,6 +24,11 @@ function App() {
     <>
       <UserInput handleInput={handleInput} userInput={userInput} />
       <Result annualData={annualData} />
+      {userInput.duration < 1 && (
+        <p className="center">
+          INVALID DURATION : duration must be integer and greater that 0
+        </p>
+      )}
     </>
   );
 }
