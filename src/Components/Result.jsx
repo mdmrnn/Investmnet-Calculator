@@ -1,5 +1,6 @@
 import { formatter } from "../util/investment";
-export default function Result({ annualData, userInput }) {
+
+export default function Result({ annualData }) {
   return (
     <table id="result" className="center">
       <thead>
@@ -16,16 +17,10 @@ export default function Result({ annualData, userInput }) {
           annualData.map((data, index) => (
             <tr key={index}>
               <td>{data.year}</td>
-              <td>
-                {formatter.format(
-                  userInput.initialInvestment +
-                    data.annualInvestment +
-                    data.interest,
-                )}
-              </td>
-              <td>{formatter.format(data.interest)}</td>
               <td>{formatter.format(data.valueEndOfYear)}</td>
-              <td>{formatter.format(data.annualInvestment)}</td>
+              <td>{formatter.format(data.interest)}</td>
+              <td>{formatter.format(data.totalInterest)}</td>
+              <td>{formatter.format(data.investedCapital)}</td>
             </tr>
           ))}
       </tbody>

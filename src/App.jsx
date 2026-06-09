@@ -23,7 +23,7 @@ function App() {
   return (
     <>
       <UserInput handleInput={handleInput} userInput={userInput} />
-      <Result annualData={annualData} userInput={userInput} />
+      <Result annualData={annualData} />
     </>
   );
 }
